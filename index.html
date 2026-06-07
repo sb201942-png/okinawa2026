@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오키나와 가족여행 🌺 6/11–14</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral:       #f25c3b;
+    --coral-deep:  #d94424;
+    --coral-mid:   #f47a5a;
+    --coral-light: #f9a48a;
+    --coral-pale:  #fef0eb;
+    --orange:      #f5833a;
+    --orange-pale: #fff3e8;
+    --hibiscus:    #e8315a;
+    --sand:        #fdf3e3;
+    --sand-dark:   #c8905a;
+    --leaf:        #2e7d52;
+    --leaf-light:  #4caf78;
+    --leaf-pale:   #e8f5ee;
+    --white:       #fffefb;
+    --dark:        #2a1810;
+    --mid:         #5a3e35;
+    --light:       #b08070;
+    --bg:          #fdf6f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(150deg, #f25c3b 0%, #e8315a 40%, #c42860 75%, #8b1a50 100%);
+    padding: 30px 22px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '🌴';
+    position: absolute;
+    bottom: -6px; left: 14px;
+    font-size: 52px;
+    opacity: 0.22;
+    line-height: 1;
+  }
+  .header::after {
+    content: '🌺';
+    position: absolute;
+    top: 14px; right: 18px;
+    font-size: 44px;
+    opacity: 0.35;
+    line-height: 1;
+  }
+  .header-deco {
+    position: absolute;
+    top: -20px; right: 60px;
+    font-size: 32px;
+    opacity: 0.18;
+    transform: rotate(20deg);
+  }
+  .header h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.8px;
+    line-height: 1.35;
+    position: relative;
+  }
+  .header h1 .sub {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .header .meta {
+    margin-top: 10px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .header .meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 20px;
+    padding: 3px 9px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── D-DAY BAR ── */
+  .dday-bar {
+    background: linear-gradient(90deg, var(--coral-deep), var(--orange));
+    padding: 9px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dday-badge {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.2px;
+  }
+  .weather-note {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.82);
+  }
+
+  /* ── PROGRESS ── */
+  .progress-section {
+    background: var(--white);
+    padding: 14px 20px;
+    border-bottom: 1px solid #f0e0d6;
+  }
+  .progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 11px; font-weight: 500; color: var(--mid);
+    margin-bottom: 6px;
+  }
+  .progress-bar {
+    height: 6px; border-radius: 3px;
+    background: #f0ddd5;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), var(--orange));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  /* ── MAIN ── */
+  main { padding: 16px; max-width: 680px; margin: 0 auto; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin: 20px 0 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--coral-pale), transparent);
+  }
+
+  /* ── DAY CARDS ── */
+  .day-card {
+    background: var(--white);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(242,92,59,0.10);
+    border: 1px solid #f0ddd5;
+  }
+  .day-header {
+    display: flex;
+    align-items: stretch;
+    cursor: pointer;
+    user-select: none;
+  }
+  .day-label {
+    width: 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 6px;
+    background: linear-gradient(170deg, var(--coral), var(--coral-deep));
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .day-label .num {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .day-label .daytext {
+    font-size: 8px;
+    font-weight: 500;
+    opacity: 0.75;
+    margin-top: 1px;
+    letter-spacing: 1px;
+  }
+  .day-label .date {
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 4px;
+    opacity: 0.88;
+  }
+  .day-info {
+    flex: 1;
+    padding: 11px 13px;
+  }
+  .day-area {
+    font-size: 10px;
+    color: var(--coral);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+  .day-summary {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+  .day-toggle {
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coral-light);
+    font-size: 13px;
+    transition: transform 0.25s;
+  }
+  .day-card.open .day-toggle { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    padding: 0 13px 13px;
+    border-top: 1px solid var(--coral-pale);
+  }
+  .day-card.open .day-body { display: block; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin-top: 10px; }
+  .tl-item {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 6px;
+    align-items: flex-start;
+  }
+  .tl-time {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--coral);
+    min-width: 44px;
+    padding-top: 1px;
+  }
+  .tl-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--coral-mid);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .tl-content { font-size: 12px; color: var(--mid); line-height: 1.55; }
+  .tl-content strong { color: var(--dark); font-weight: 600; }
+
+  .meal-box {
+    margin-top: 10px;
+    background: var(--coral-pale);
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .meal-title { font-size: 10px; color: var(--coral-deep); font-weight: 700; margin-bottom: 4px; }
+  .meal-item { font-size: 12px; color: var(--mid); margin-bottom: 2px; }
+
+  .weather-alt {
+    margin-top: 10px;
+    background: var(--orange-pale);
+    border: 1px solid #f5d0a8;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .weather-alt-title { font-size: 10px; color: var(--sand-dark); font-weight: 700; margin-bottom: 4px; }
+  .weather-alt-item { font-size: 12px; color: var(--mid); }
+
+  /* ── CHECKLIST ── */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 480px) {
+    .checklist-grid { grid-template-columns: 1fr; }
+  }
+
+  .checklist-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 13px;
+    border: 1px solid #f0ddd5;
+    box-shadow: 0 1px 5px rgba(242,92,59,0.07);
+  }
+  .checklist-card h3 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--coral-deep);
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 5px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  .check-item input[type=checkbox] { display: none; }
+  .check-box {
+    width: 16px; height: 16px;
+    border: 1.5px solid #e0b8a8;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    margin-top: 1px;
+  }
+  .check-item.checked .check-box {
+    background: var(--coral);
+    border-color: var(--coral);
+  }
+  .check-item.checked .check-box::after {
+    content: '✓';
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .check-item.checked .check-label {
+    text-decoration: line-through;
+    color: var(--light);
+  }
+  .check-label {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.4;
+    flex: 1;
+  }
+  .check-label .tag {
+    display: inline-block;
+    font-size: 9px;
+    padding: 0 4px;
+    border-radius: 3px;
+    background: var(--coral-pale);
+    color: var(--coral-deep);
+    margin-left: 3px;
+    vertical-align: middle;
+  }
+  .check-label .tag.red { background: #fde8e4; color: var(--hibiscus); }
+  .check-label .tag.green { background: var(--leaf-pale); color: var(--leaf); }
+
+  /* ── MEMO ── */
+  .memo-box {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 13px;
+    border: 1px solid #f0ddd5;
+    box-shadow: 0 1px 5px rgba(242,92,59,0.07);
+  }
+  .memo-box h3 {
+    font-size: 11px; font-weight: 700; color: var(--coral-deep);
+    margin-bottom: 8px;
+  }
+  .memo-box textarea {
+    width: 100%;
+    border: 1px solid #f0ddd5;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: var(--dark);
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+    transition: border 0.2s;
+    background: var(--bg);
+  }
+  .memo-box textarea:focus { border-color: var(--coral-mid); }
+
+  /* ── INFO STRIP ── */
+  .info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .info-chip {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 10px 11px;
+    border: 1px solid #f0ddd5;
+    text-align: center;
+  }
+  .info-chip .ic-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--coral);
+    line-height: 1.2;
+  }
+  .info-chip .ic-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--light);
+    margin-top: 2px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 20px 16px 32px;
+    font-size: 11px;
+    color: var(--light);
+  }
+
+  /* ── ADD ITEM ── */
+  .add-item-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .add-item-row input {
+    flex: 1;
+    border: 1px dashed #e0b8a8;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-family: 'Noto Sans KR', sans-serif;
+    outline: none;
+    background: var(--bg);
+    color: var(--dark);
+  }
+  .add-item-row input::placeholder { color: #c8a090; }
+  .add-item-row button {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 11px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: background 0.2s;
+  }
+  .add-item-row button:hover { background: var(--coral-deep); }
+
+  /* ── SCROLL TOP ── */
+  .scroll-top {
+    position: fixed;
+    bottom: 20px; right: 16px;
+    width: 38px; height: 38px;
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 12px rgba(242,92,59,0.35);
+    transition: opacity 0.2s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+
+  .badge-kids {
+    display: inline-flex; align-items: center; gap: 3px;
+    background: var(--orange-pale); color: var(--orange);
+    font-size: 10px; padding: 2px 6px;
+    border-radius: 10px; font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-deco">🌺</div>
+  <h1>오키나와 가족여행 🌴
+    <span class="sub">3박 4일 여행 대시보드 · 6월 11–14일</span>
+  </h1>
+  <div class="meta">
+    <span>📅 6/11(수)–6/14(토)</span>
+    <span>👨‍👩‍👧 성인 6명</span>
+    <span>🧒 어린이 3명 (5·7·9세)</span>
+    <span>🚗 렌터카</span>
+    <span>🌺 노보텔 나하</span>
+  </div>
+</div>
+
+<div class="dday-bar">
+  <div class="dday-badge" id="ddayText">D-day 계산 중...</div>
+  <div class="weather-note">🌺 오키나와 6월 평균 30°C · 강수확률 높음 🌴</div>
+</div>
+
+<div class="progress-section">
+  <div class="progress-label">
+    <span>준비 완료도</span>
+    <span id="progressPct">0%</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- QUICK INFO -->
+  <div class="section-title">✈️ 여행 기본 정보</div>
+  <div class="info-strip">
+    <div class="info-chip">
+      <div class="ic-val">9명</div>
+      <div class="ic-label">총 인원</div>
+      <div style="margin-top:5px; display:flex; justify-content:center; gap:4px;">
+        <span style="font-size:9px; background:var(--coral-pale); color:var(--coral-deep); border-radius:4px; padding:1px 6px; font-weight:600;">성인 6</span>
+        <span style="font-size:9px; background:var(--orange-pale); color:var(--orange); border-radius:4px; padding:1px 6px; font-weight:600;">아동 3</span>
+      </div>
+    </div>
+    <div class="info-chip">
+      <div class="ic-val">3박4일</div>
+      <div class="ic-label">일정</div>
+    </div>
+    <div class="info-chip" style="text-align:left;">
+      <div style="font-size:9px; font-weight:700; color:var(--coral-deep); margin-bottom:3px;">🏨 베이스캠프</div>
+      <div style="font-size:11px; color:var(--dark); font-weight:600; line-height:1.4;"><a href="https://maps.app.goo.gl/novotel-okinawa-naha" target="_blank" style="color:var(--coral-deep); text-decoration:none;" onclick="window.open('https://www.google.com/maps/search/Novotel+Okinawa+Naha/@26.2124,127.6792,17z','_blank'); return false;">노보텔 오키나와 나하 📍</a></div>
+      <div style="font-size:9px; color:var(--light); margin-top:2px;">松川 40 · ☎ +81-98-887-1111</div>
+      <div style="font-size:9px; color:var(--mid); margin-top:1px;">CI 15:00 / CO 11:00</div>
+    </div>
+  </div>
+  <div class="info-strip" style="margin-top:8px">
+    <div class="info-chip">
+      <div class="ic-val" style="font-size:13px; line-height:1.3;">6/11(수)<br><span style="font-size:15px;">11:00</span></div>
+      <div class="ic-label">인천 출발 ✈️</div>
+    </div>
+    <div class="info-chip">
+      <div class="ic-val" style="font-size:13px; line-height:1.3;">6/11(수)<br><span style="font-size:15px;">15:00</span></div>
+      <div class="ic-label">나하 도착 🌴</div>
+    </div>
+    <div class="info-chip">
+      <div class="ic-val" style="font-size:13px; line-height:1.3;">6/14(토)<br><span style="font-size:15px;">18:15</span></div>
+      <div class="ic-label">귀국 출발 ✈️</div>
+    </div>
+  </div>
+
+  <!-- 일정 -->
+  <div class="section-title">🗓️ 일자별 일정</div>
+
+  <!-- 1일차 -->
+  <div class="day-card open" id="day1">
+    <div class="day-header" onclick="toggleDay('day1')">
+      <div class="day-label" style="background:linear-gradient(170deg,#f25c3b,#d94424)">
+        <div class="num">1</div>
+        <div class="daytext">DAY</div>
+        <div class="date">6/11</div>
+      </div>
+      <div class="day-info">
+        <div class="day-area">나하 시내</div>
+        <div class="day-summary">인천 출발 → 나하 도착<br>국제거리 & 마키시 공설시장</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">11:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>인천국제공항 제1터미널 출발</strong></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">15:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>나하공항 도착</strong> — 렌터카 픽업 후 여행 시작</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">오후</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>나하 국제거리 & 마키시 공설시장</strong> 투어<br>아이들과 오키나와 과자·기념품 구경</div>
+        </div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-title">🍜 저녁 식사</div>
+        <div class="meal-item">• 국제거리 마키시 공설시장 2층 식당 (수산물 선택 후 요리 주문)</div>
+        <div class="meal-item">• 또는 카니발에서 이른 저녁식사</div>
+      </div>
+      <div class="meal-box" style="margin-top:8px; background:var(--leaf-pale);">
+        <div class="meal-title" style="color:var(--leaf)">🛍️ 쇼핑</div>
+        <div class="meal-item">• 숙소 근처 '산에이 나하 메인플레이스' 대형몰</div>
+        <div class="meal-item">• '산에이 파르코시티 우라소에' (우라소에시 · 대형 복합몰)</div>
+      </div>
+      <div class="weather-alt">
+        <div class="weather-alt-title">☔ 우천 대비 (실내 동선)</div>
+        <div class="weather-alt-item">→ 마키시 공설시장은 실내 운영 / 산에이 쇼핑몰 우선 이동</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2일차 -->
+  <div class="day-card" id="day2">
+    <div class="day-header" onclick="toggleDay('day2')">
+      <div class="day-label" style="background:linear-gradient(170deg,#f47a5a,#e05030)">
+        <div class="num">2</div>
+        <div class="daytext">DAY</div>
+        <div class="date">6/12</div>
+      </div>
+      <div class="day-info">
+        <div class="day-area">북부 투어</div>
+        <div class="day-summary">츄라우미 수족관 🐠<br>나고 파인애플 파크</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">오전/오후</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>츄라우미 수족관</strong> 관람 🐋🦈<br><span style="font-size:11px;color:#8a9ab8">어린이 무료 관람 연령 확인 추천 (6세 이하 무료)</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">오후</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>나고 파인애플 파크</strong> 방문<br><span style="font-size:11px;color:#8a9ab8">아이들 좋아하는 파인애플 카트 체험</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">저녁</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>나하 시내 복귀</strong> 후 자유 시간</div>
+        </div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-title">🍽️ 점심/저녁</div>
+        <div class="meal-item">• 점심: 츄라우미 수족관 내에서 간단한 매점 식사</div>
+        <div class="meal-item">• 저녁: 호텔 근처 스테이크 전문점 (도보 15분, 1km)</div>
+        <div class="meal-item" style="font-size:11px;color:#8a9ab8">  후보: 파리 스테이크 마카비점 / 스테이크 하우스 88 Jr. 마카비점</div>
+      </div>
+      <div class="weather-alt">
+        <div class="weather-alt-title">☔ 우천 대비</div>
+        <div class="weather-alt-item">→ 츄라우미 수족관 실내 위주 동선으로 우천 시에도 충분</div>
+        <div class="weather-alt-item">→ 이온몰(Aeon Mall) 라이카무 복합 쇼핑·식내 맛집 탐방</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3일차 -->
+  <div class="day-card" id="day3">
+    <div class="day-header" onclick="toggleDay('day3')">
+      <div class="day-label" style="background:linear-gradient(170deg,#f5833a,#d96025)">
+        <div class="num">3</div>
+        <div class="daytext">DAY</div>
+        <div class="date">6/13</div>
+      </div>
+      <div class="day-info">
+        <div class="day-area">남부 투어</div>
+        <div class="day-summary">오키나와 월드 (남부민속촌·동굴)<br>미바루 비치 글라스보트 🚤</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">오전</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>오키나와 월드</strong> — 나하 남쪽 민속촌 & 동굴 탐방<br><span style="font-size:11px;color:#8a9ab8">뱀 쇼, 전통 공예 체험 — 아이들 흥미 요소 많음</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">오후</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>미바루 비치 글라스보트</strong> 체험 (추천 코스)<br><span style="font-size:11px;color:#8a9ab8">산호초·열대어 관찰 / 어린이 특히 좋아함</span></div>
+        </div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-title">🍽️ 점심/저녁</div>
+        <div class="meal-item">• 점심: 미바루 비치 이동 경로 중 뷰가 좋은 카페/식당</div>
+        <div class="meal-item" style="font-size:11px;color:#8a9ab8">  후보: Tamagusuku Diner / 아마노차야 라쿠스이(山의 茶屋·楽水)</div>
+        <div class="meal-item">• 저녁: 호텔 주변 오키나와 소바 또는 이온몰 내 식당가</div>
+      </div>
+      <div class="weather-alt">
+        <div class="weather-alt-title">☔ 우천 대비</div>
+        <div class="weather-alt-item">→ 오키나와 월드 동굴 투어는 우천 무관</div>
+        <div class="weather-alt-item">→ 글라스보트 취소 시: 오키나와 월드 내 실내 공예 체험 공간 활용</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4일차 -->
+  <div class="day-card" id="day4">
+    <div class="day-header" onclick="toggleDay('day4')">
+      <div class="day-label" style="background:linear-gradient(170deg,#e8315a,#b81e45)">
+        <div class="num">4</div>
+        <div class="daytext">DAY</div>
+        <div class="date">6/14</div>
+      </div>
+      <div class="day-info">
+        <div class="day-area">귀국</div>
+        <div class="day-summary">나하 근교 자유 투어<br>15:30 렌터카 반납 → 18:15 출발 ✈️</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">오전</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><strong>나하 근교 자유 투어</strong><br><span style="font-size:11px;color:#8a9ab8">추천: 슈리성, 시키나엔, 오키피(현립 박물관·미술관), 만코 불씨·습지센터 등</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">15:30</div>
+          <div class="tl-dot" style="background:var(--hibiscus)"></div>
+          <div class="tl-content"><strong style="color:var(--hibiscus)">렌터카 반납</strong> ⚠️ 시간 엄수</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:15</div>
+          <div class="tl-dot" style="background:var(--hibiscus)"></div>
+          <div class="tl-content"><strong style="color:var(--hibiscus)">나하공항 출발</strong> ✈️ 귀국</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">20:35</div>
+          <div class="tl-dot" style="background:var(--hibiscus)"></div>
+          <div class="tl-content"><strong style="color:var(--hibiscus)">인천국제공항 제2터미널 도착</strong> 🇰🇷</div>
+        </div>
+      </div>
+      <div class="meal-box">
+        <div class="meal-title">🛍️ 마지막 점심/쇼핑</div>
+        <div class="meal-item">• 공항 이동 전 대형 쇼핑몰 활용 — 식사 & 미처 못한 쇼핑 해결</div>
+        <div class="meal-item">• 오후: 쇼핑몰에서 마지막 식사 & 기념품 쇼핑</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 맛집 & 카페 -->
+  <div class="section-title">🍔 오키나와 맛집 & 카페</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+
+    <div class="checklist-card">
+      <h3>🍔 버거 & 패스트푸드</h3>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">A&W 오키나와</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">미국식 루트비어·커리독·모짜버거. 오키나와 한정 체인으로 본토에 없음. 아이들 최애</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">Jef 버거</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">고야(여주) 버거 원조. 오키나와산 식재료 사용. 국제거리 근처</div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <h3>🍦 아이스크림 & 디저트</h3>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">Blue Seal Ice Cream 🌺</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">오키나와 대표 아이스크림 체인. 자색고구마·친스코 등 현지 한정 맛 필수</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">파인애플 소프트아이스크림</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">나고 파인애플 파크 내. 아이들 간식으로 딱</div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <h3>🍜 오키나와 로컬 푸드</h3>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">오키나와 소바</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">돼지뼈·가다랑어 육수의 굵은 면. 대표집 — 首里そば(슈리소바), 花笠食堂</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">찬푸루 정식</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">고야·두부·돼지고기 볶음. 현지 가정식 느낌. 마키시 공설시장 2층 식당가 추천</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">라후테 (돼지 삼겹 조림)</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">흑설탕·아와모리로 조린 오키나와식 동파육. 이자카야 메뉴로 흔히 등장</div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <h3>☕ 카페 & 뷰 맛집</h3>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">Cape Manzamo 뷰 카페</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">만자모 절벽 뷰. 북부 투어 이동 중 들르기 좋음</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">Tamagusuku Diner</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">미바루 비치 근처 오션뷰 다이너. 3일차 점심 추천</div>
+      </div>
+      <div class="meal-item" style="margin-bottom:6px;">
+        <strong style="color:var(--dark); font-size:12px;">국제거리 카페 거리</strong>
+        <div style="font-size:11px; color:var(--light); margin-top:1px;">흑설탕 라떼·히비스커스 주스 등 오키나와 특산 음료. 산책 중 즉흥 입장 추천</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 체크리스트 -->
+  <div class="section-title">✅ 준비 체크리스트</div>
+
+  <div class="checklist-grid">
+
+    <!-- 서류·예약 -->
+    <div class="checklist-card">
+      <h3>📋 서류 & 예약</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">여권 유효기간 확인 (9명 전원) <span class="tag red">필수</span></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">항공권 예약 확인</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">숙소 예약 확인 (3박)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">렌터카 예약 (9인승 or 분승) <span class="tag red">중요</span></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">국제운전면허증 발급 (운전자 전원)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">츄라우미 수족관 예약 / 입장권</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">미바루 비치 글라스보트 예약</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">해외여행자 보험 가입 (9명)</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text" placeholder="추가할 항목..." onkeydown="addItem(event, this)">
+        <button onclick="addItemBtn(this)">+</button>
+      </div>
+    </div>
+
+    <!-- 어린이 준비물 -->
+    <div class="checklist-card">
+      <h3>🧒 어린이 필수 준비물</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">카시트/부스터 예약 (렌터카사 확인) <span class="tag red">필수</span></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">어린이 선크림 SPF50+ (여유분 포함)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">래시가드 (아이별 1~2벌)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">물놀이 신발 / 아쿠아슈즈</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">상비약 (해열제·지사제·멀미약·반창고)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">모기 기피제 (유아용)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">간식·음료 (이동 차량용)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">아이 여분 옷 (하루 2벌 기준)</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text" placeholder="추가할 항목..." onkeydown="addItem(event, this)">
+        <button onclick="addItemBtn(this)">+</button>
+      </div>
+    </div>
+
+    <!-- 짐 꾸리기 -->
+    <div class="checklist-card">
+      <h3>🧳 짐 꾸리기</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">포켓 Wi-Fi 또는 심카드 준비</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">엔화 환전 (현금 여유분)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">우산 또는 우비 (우천 대비)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">선글라스 (성인·아이 모두)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">멀티 어댑터 (일본 콘센트 A타입)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">보조배터리 (항공사 규정 확인)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">세면·위생용품 (100ml 이하 용기)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">카메라 / 방수 케이스</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text" placeholder="추가할 항목..." onkeydown="addItem(event, this)">
+        <button onclick="addItemBtn(this)">+</button>
+      </div>
+    </div>
+
+    <!-- 현지 이동 -->
+    <div class="checklist-card">
+      <h3>🚗 현지 이동 & 앱</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">Google Maps 오키나와 오프라인 저장 <span class="tag green">앱</span></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">파파고 / 구글번역 앱 설치 <span class="tag green">앱</span></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">렌터카사 긴급연락처 저장</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">숙소 주소 일본어로 저장 (네비용)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">주요 관광지 영업시간 재확인</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">일본 긴급번호 저장 (110·119)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">어린이 미아 방지 네임택 부착</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">숙소 체크인 시간 확인</div>
+      </div>
+      <div class="add-item-row">
+        <input type="text" placeholder="추가할 항목..." onkeydown="addItem(event, this)">
+        <button onclick="addItemBtn(this)">+</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 쇼핑 리스트 -->
+  <div class="section-title">🛍️ 쇼핑 아이템</div>
+  <div class="memo-box">
+    <h3>🇯🇵 현지 쇼핑 리스트</h3>
+    <div id="shopping-list">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">류큐 유리 기념품 (오키나와 특산)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">시퀀자 (오키나와 도자기) 그릇</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">우미부도 (바다포도) 간식·선물용</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">찬푸루 믹스 / 오키나와 소바 세트</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">블루씰 아이스크림 (현지 한정 맛)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">오키나와 흑설탕 과자 (선물용)</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">아와모리 (오키나와 전통주) — 성인</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox"><div class="check-box"></div>
+        <div class="check-label">마쓰리모리 선물 세트 (공항 면세)</div>
+      </div>
+    </div>
+    <div class="add-item-row" style="margin-top:10px;">
+      <input type="text" placeholder="쇼핑 아이템 추가..." onkeydown="addShopItem(event, this)">
+      <button onclick="addShopItemBtn(this)">+</button>
+    </div>
+  </div>
+  <div class="memo-box" style="margin-top:10px">
+    <h3>🚗 렌터카 정보</h3>
+    <textarea id="memo2" placeholder="렌터카 업체명, 예약번호, 픽업 위치, 반납 시간 등..." oninput="saveMemo()"></textarea>
+  </div>
+  <div class="memo-box" style="margin-top:10px">
+    <h3>💡 기타 메모 & 주의사항</h3>
+    <textarea id="memo3" style="min-height:100px" placeholder="알레르기, 긴급 연락처, 아이들 주의사항, 기타 메모..." oninput="saveMemo()"></textarea>
+  </div>
+
+</main>
+
+<div class="footer">
+  🌺 오키나와 3박4일 가족여행 · 6월 11–14일 🌴<br>
+  체크 완료 상태가 자동 저장됩니다
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // D-DAY
+  function updateDday() {
+    const trip = new Date('2025-06-11');
+    const now = new Date();
+    // 실제 연도를 2026으로 맞춤
+    const target = new Date('2026-06-11');
+    const diff = Math.ceil((target - now) / (1000*60*60*24));
+    const el = document.getElementById('ddayText');
+    if (diff > 0) el.textContent = `D-${diff} · 출발까지 ${diff}일 남았습니다 🌺`;
+    else if (diff === 0) el.textContent = '🎉 D-DAY! 출발일입니다! 🌴';
+    else {
+      const elapsed = Math.abs(diff);
+      if (elapsed <= 4) el.textContent = `여행 ${elapsed}일차 — 즐거운 여행 중! 🌺🌴`;
+      else el.textContent = '여행이 완료되었습니다. 좋은 추억이 되셨나요? 🌺';
+    }
+  }
+  updateDday();
+
+  // TOGGLE DAY
+  function toggleDay(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  // CHECK ITEM
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    saveChecks();
+    updateProgress();
+  }
+
+  // ADD ITEM
+  function addItem(event, input) {
+    if (event.key === 'Enter') addItemToList(input);
+  }
+  function addItemBtn(btn) {
+    addItemToList(btn.previousElementSibling);
+  }
+  function addItemToList(input) {
+    const val = input.value.trim();
+    if (!val) return;
+    const card = input.closest('.checklist-card');
+    const row = input.closest('.add-item-row');
+    const item = document.createElement('div');
+    item.className = 'check-item';
+    item.innerHTML = `<input type="checkbox"><div class="check-box"></div><div class="check-label">${val}</div>`;
+    item.onclick = function() { toggleCheck(item); };
+    card.insertBefore(item, row);
+    input.value = '';
+    saveChecks();
+    updateProgress();
+  }
+
+  function addShopItem(event, input) {
+    if (event.key === 'Enter') addShopItemToList(input);
+  }
+  function addShopItemBtn(btn) {
+    addShopItemToList(btn.previousElementSibling);
+  }
+  function addShopItemToList(input) {
+    const val = input.value.trim();
+    if (!val) return;
+    const list = document.getElementById('shopping-list');
+    const item = document.createElement('div');
+    item.className = 'check-item';
+    item.innerHTML = `<input type="checkbox"><div class="check-box"></div><div class="check-label">${val}</div>`;
+    item.onclick = function() { toggleCheck(item); };
+    list.appendChild(item);
+    input.value = '';
+    saveChecks();
+    updateProgress();
+  }
+
+  // PROGRESS
+  function updateProgress() {
+    const all = document.querySelectorAll('.check-item');
+    const done = document.querySelectorAll('.check-item.checked');
+    const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+    document.getElementById('progressPct').textContent = pct + '%';
+    document.getElementById('progressFill').style.width = pct + '%';
+  }
+
+  // SAVE / LOAD (localStorage)
+  function saveChecks() {
+    const states = [];
+    document.querySelectorAll('.check-item').forEach(el => {
+      states.push(el.classList.contains('checked') ? '1' : '0');
+    });
+    try { localStorage.setItem('oki_checks', JSON.stringify(states)); } catch(e){}
+  }
+
+  function loadChecks() {
+    try {
+      const states = JSON.parse(localStorage.getItem('oki_checks') || '[]');
+      const items = document.querySelectorAll('.check-item');
+      states.forEach((s, i) => {
+        if (items[i] && s === '1') items[i].classList.add('checked');
+      });
+    } catch(e){}
+    updateProgress();
+  }
+
+  function saveMemo() {
+    try {
+      localStorage.setItem('oki_memo2', document.getElementById('memo2').value);
+      localStorage.setItem('oki_memo3', document.getElementById('memo3').value);
+    } catch(e){}
+  }
+
+  function loadMemo() {
+    try {
+      document.getElementById('memo2').value = localStorage.getItem('oki_memo2') || '';
+      document.getElementById('memo3').value = localStorage.getItem('oki_memo3') || '';
+    } catch(e){}
+  }
+
+  // SCROLL TOP
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 200);
+  });
+
+  // INIT
+  loadChecks();
+  loadMemo();
+</script>
+</body>
+</html>
